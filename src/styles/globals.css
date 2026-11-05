@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #090D12;
+    --bg-surface: #0E141D;
+    --bg-elevated: #131B26;
+    --text-primary: #F1F0EA;
+    --text-muted: rgba(241, 240, 234, 0.68);
+    --accent-cyan: #00C8E8;
+    --accent-violet: #8065D8;
+  }
+
+  * {
+    border-color: rgba(241, 240, 234, 0.1);
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: #090D12;
+    color: #F1F0EA;
+    scroll-behavior: smooth;
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Bento Card Design System — Thin Borders, Restrained Corners, Controlled Glassmorphism */
+.bento-surface {
+  background: linear-gradient(165deg, rgba(19, 27, 38, 0.82) 0%, rgba(9, 13, 18, 0.94) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(241, 240, 234, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.65);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.bento-surface:hover {
+  border-color: rgba(0, 200, 232, 0.42);
+  box-shadow:
+    0 24px 60px -12px rgba(0, 0, 0, 0.8),
+    0 0 28px -8px rgba(0, 200, 232, 0.18);
+}
+
+.bento-surface-violet:hover {
+  border-color: rgba(128, 101, 216, 0.48);
+  box-shadow:
+    0 24px 60px -12px rgba(0, 0, 0, 0.8),
+    0 0 28px -8px rgba(128, 101, 216, 0.22);
+}
+
+/* Subtle Engineering Grid Background */
+.bg-engineering-grid {
+  background-color: #090D12;
+  background-image:
+    linear-gradient(to right, rgba(241, 240, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(241, 240, 234, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090D12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1C2636;
+  border-radius: 9999px;
+  border: 2px solid #090D12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00C8E8;
+}

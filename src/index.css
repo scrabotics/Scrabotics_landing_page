@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F3F0E8;
+    --text-primary: #111111;
+    --accent-lime: #C7FF35;
+    --bg-concrete: #B8B6AC;
+    --bg-graphite: #222222;
+  }
+
+  * {
+    border-color: #111111;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: #F3F0E8;
+    color: #111111;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 0.94;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Blueprint Technical Grid */
+.bg-blueprint-grid {
+  background-color: #F3F0E8;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+.bg-graphite-grid {
+  background-color: #222222;
+  background-image:
+    linear-gradient(to right, rgba(243, 240, 232, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 240, 232, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Neo-Brutalist Hard Offset Shadows */
+.brutal-shadow {
+  box-shadow: 6px 6px 0px 0px #111111;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 10px 10px 0px 0px #111111;
+}
+
+.brutal-shadow-lime {
+  box-shadow: 6px 6px 0px 0px #C7FF35;
+}
+
+.brutal-shadow-offwhite {
+  box-shadow: 6px 6px 0px 0px #F3F0E8;
+}
+
+.brutal-card {
+  border: 3px solid #111111;
+  box-shadow: 7px 7px 0px 0px #111111;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.brutal-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px 0px #111111;
+}
+
+.brutal-btn {
+  border: 3px solid #111111;
+  box-shadow: 5px 5px 0px 0px #111111;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px 0px #111111;
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px 0px #111111;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F0E8;
+  border-left: 3px solid #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border: 2px solid #F3F0E8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C7FF35;
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
